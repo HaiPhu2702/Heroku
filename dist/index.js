@@ -13,7 +13,7 @@ const PORT = 3000;
 const app = (0, express_1.default)();
 app.set("view engine", "ejs");
 app.set('views', './src/views');
-const DB_URL = `mongodb://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}`;
+const DB_URL = process.env.DB_URL;
 console.log(DB_URL, "DB_URL");
 mongoose_1.default.connect(DB_URL)
     .then(() => console.log('DB Connected!'))
